@@ -1,65 +1,65 @@
-import Image from "next/image";
+import Section from "../components/Section";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="space-y-12">
+      <Hero />
+      
+      {/* About Me */}
+      <Section title="About Me">
+        <p>
+          I’m a software engineering leader with 20+ years of experience building
+          scalable web applications and cloud platforms. I combine deep technical
+          expertise with leadership, mentoring high-performing teams, and delivering
+          impactful solutions in enterprise and regulated environments.
+        </p>
+        <br />
+        <p>
+          My expertise spans React, Next.js, TypeScript, Python, PHP, PostgreSQL, MySQL and
+          cloud-native architectures on AWS. I enjoy designing maintainable systems
+          that solve real-world problems efficiently.
+        </p>
+      </Section>
+
+      {/* Core Competencies */}
+      <Section title="Core Competencies">
+        <ul className="pl-5 space-y-1 list-disc">
+          <li>Full-Stack Web Development & Scalable Architecture</li>
+          <li>Cloud Infrastructure & Microservices (AWS)</li>
+          <li>CI/CD, DevOps Automation & Observability</li>
+          <li>Technical Leadership & Team Mentorship</li>
+          <li>Agile Delivery, Roadmapping & Stakeholder Alignment</li>
+          <li>AI-assisted Development & Emerging Technologies</li>
+        </ul>
+      </Section>
+
+      {/* Career Highlights */}
+      {/* <Section title="Career Highlights">
+        <ul className="pl-5 space-y-2 list-disc">
+          <li>
+            Led migration of legacy PHP platforms to 15+ TypeScript AWS microservices,
+            improving scalability and accelerating release cycles by 50%.
+          </li>
+          <li>
+            Directed multiple distributed cross-functional teams of engineers and managers,
+            fostering collaboration, career growth, and high productivity.
+          </li>
+          <li>
+            Implemented AI-assisted development, observability tools, and security
+            enhancements to improve release stability, compliance, and performance.
+          </li>
+        </ul>
+      </Section> */}
+
+      {/* What I Do */}
+      <Section title="What I Do">
+        <ul className="pl-5 space-y-2 list-disc">
+          <li>Design and implement modern, high-performance web applications</li>
+          <li>Lead and mentor engineering teams for scalable, maintainable delivery</li>
+          <li>Bridge product, business, and technical strategies for impactful results</li>
+        </ul>
+      </Section>
     </div>
   );
 }
