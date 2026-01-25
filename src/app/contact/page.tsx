@@ -9,44 +9,46 @@ export default function ContactPage() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-  if (!sectionRef.current) return;
+    if (!sectionRef.current) return;
 
-  const node = sectionRef.current; // 👈 copy current value
-  const observer = new IntersectionObserver(
-        ([entry]) => {
+    const node = sectionRef.current; // 👈 copy current value
+    const observer = new IntersectionObserver(
+      ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
-        },
-        { threshold: 0.2 }
+      },
+      { threshold: 0.2 },
     );
 
     observer.observe(node);
 
     return () => {
-        observer.unobserve(node); // 👈 safe reference
+      observer.unobserve(node); // 👈 safe reference
     };
-    }, []);
+  }, []);
 
   const sectionAnimation = visible
     ? "translate-y-0 opacity-100 transition-all duration-700 ease-out"
     : "translate-y-6 opacity-0";
 
   const buttons = [
-    {
-      label: "Email Me",
-      href: "mailto:alex@example.com",
-      style: "bg-accent text-white hover:bg-accent/90",
-      icon: <EnvelopeIcon />,
-    },
+    // {
+    //   label: "Email Me",
+    //   href: "mailto:test@example.com",
+    //   style: "bg-accent text-white hover:bg-accent/90",
+    //   icon: <EnvelopeIcon />,
+    // },
     {
       label: "GitHub",
-      href: "https://github.com/alex",
-      style: "bg-accent text-white hover:bg-accent/90 dark:bg-accent dark:text-gray-200 dark:hover:bg-accent/80",
+      href: "https://github.com/elliecdev",
+      style:
+        "bg-accent text-white hover:bg-accent/90 dark:bg-accent dark:text-gray-200 dark:hover:bg-accent/80",
       icon: <GitHubIcon />,
     },
     {
       label: "LinkedIn",
-      href: "https://linkedin.com/in/alex",
-      style: "bg-accent text-white hover:bg-accent/90 dark:bg-accent dark:text-gray-200 dark:hover:bg-accent/80",
+      href: "https://linkedin.com/in/elliecoelho",
+      style:
+        "bg-accent text-white hover:bg-accent/90 dark:bg-accent dark:text-gray-200 dark:hover:bg-accent/80",
       icon: <LinkedInIcon />,
     },
   ];
@@ -61,7 +63,8 @@ export default function ContactPage() {
       </h1>
 
       <p className="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
-        I’m always open to new opportunities, collaborations, or just a friendly chat.
+        I’m always open to new opportunities, collaborations, or just a friendly
+        chat.
       </p>
 
       <div className="flex flex-col justify-center gap-4 mt-8 sm:flex-row">
@@ -70,7 +73,11 @@ export default function ContactPage() {
           return (
             <div
               key={btn.label}
-              className={visible ? `opacity-100 translate-y-0 delay-[${delay}ms]` : "opacity-0 translate-y-6"}
+              className={
+                visible
+                  ? `opacity-100 translate-y-0 delay-[${delay}ms]`
+                  : "opacity-0 translate-y-6"
+              }
             >
               <ContactButton
                 href={btn.href}

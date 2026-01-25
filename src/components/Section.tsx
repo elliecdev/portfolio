@@ -20,7 +20,7 @@ export default function Section({ title, subtitle, children }: SectionProps) {
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(node);

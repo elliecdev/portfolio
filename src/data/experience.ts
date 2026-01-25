@@ -15,7 +15,7 @@ export const experience: ExperienceItem[] = [
     description: [
       "Led multiple cross-functional distributed engineering teams delivering cloud-native platforms.",
       "Migrated monolith to 15+ AWS microservices, improving scalability and release speed.",
-      "Introduced AI-assisted development and observability tools, cutting errors and boosting efficiency."
+      "Introduced AI-assisted development and observability tools, cutting errors and boosting efficiency.",
     ],
     tech: ["TypeScript", "AWS", "Python", "Django", "CI/CD", "Microservices"],
   },
@@ -25,7 +25,7 @@ export const experience: ExperienceItem[] = [
     period: "Apr 2018 – Apr 2021",
     description: [
       "Managed cross-functional teams delivering PHP, TypeScript, and Python projects.",
-      "Implemented CI/CD automation and Agile frameworks, improving delivery efficiency by 30%."
+      "Implemented CI/CD automation and Agile frameworks, improving delivery efficiency by 30%.",
     ],
     tech: ["PHP", "TypeScript", "Python", "Jira", "Agile", "CI/CD"],
   },
@@ -35,7 +35,7 @@ export const experience: ExperienceItem[] = [
     period: "Jun 2015 – Apr 2018",
     description: [
       "Delivered full application lifecycles and mentored engineers for high-performing teams.",
-      "Streamlined project tracking and technical design processes, accelerating releases."
+      "Streamlined project tracking and technical design processes, accelerating releases.",
     ],
     tech: ["PHP", "TypeScript", "Python", "Jira", "Scrum", "Unit Testing"],
   },
@@ -45,7 +45,7 @@ export const experience: ExperienceItem[] = [
     period: "May 2014 – Jun 2015",
     description: [
       "Managed staging and production environments to ensure high availability and security.",
-      "Oversaw releases, automated backups, and critical issue resolution to safeguard operations."
+      "Oversaw releases, automated backups, and critical issue resolution to safeguard operations.",
     ],
     tech: ["LAMP", "MySQL", "Linux", "DevOps", "Monitoring", "Automation"],
   },
@@ -55,7 +55,7 @@ export const experience: ExperienceItem[] = [
     period: "Mar 2013 – May 2014",
     description: [
       "Led full-stack development of new PHP/Yii web applications, improving reporting speed by 60%.",
-      "Mentored junior developers and enforced best practices to enhance team efficiency."
+      "Mentored junior developers and enforced best practices to enhance team efficiency.",
     ],
     tech: ["PHP", "Yii", "MySQL", "JavaScript", "Unit Testing"],
   },

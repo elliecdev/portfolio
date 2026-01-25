@@ -11,24 +11,23 @@ export default function Badge({ label, index }: BadgeProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [visible, setVisible] = useState(false);
 
-    useEffect(() => {
-        if (!ref.current) return;
+  useEffect(() => {
+    if (!ref.current) return;
 
-        const node = ref.current; // capture the current ref
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-            if (entry.isIntersecting) setVisible(true);
-            },
-            { threshold: 0.2 }
-        );
+    const node = ref.current; // capture the current ref
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.2 },
+    );
 
-        observer.observe(node);
+    observer.observe(node);
 
-        return () => {
-            observer.unobserve(node); // use the captured node
-        };
-    }, []);
-
+    return () => {
+      observer.unobserve(node); // use the captured node
+    };
+  }, []);
 
   const animationClass = visible
     ? `translate-y-0 opacity-100 transition-all duration-500 delay-[${index * 100 + 300}ms] ease-out`

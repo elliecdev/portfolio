@@ -11,9 +11,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
-      className="relative px-6 overflow-hidden text-white rounded-2xl bg-gradient-to-r from-accent to-accent/70 py-14 md:px-12 md:py-15"
-    >
+    <section className="relative px-6 overflow-hidden text-white rounded-2xl bg-gradient-to-r from-accent to-accent/70 py-14 md:px-12 md:py-15">
       {/* Content */}
       <div className="relative z-10 max-w-3xl space-y-4">
         <h1 className="text-xl font-semibold leading-tight md:text-4xl">
@@ -66,7 +64,7 @@ export default function Hero() {
         className="top-20 right-10 w-9 md:w-11"
         delay="delay-700"
         visible={visible}
-        />
+      />
     </section>
   );
 }
@@ -113,4 +111,3 @@ function TechIcon({
     </div>
   );
 }
-

@@ -70,16 +70,41 @@ export const LinkedInIcon = () => (
 
 export function ReactIcon({ className }: { className?: string }) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
-    
-    <ellipse rx="45" ry="11" transform="rotate(0 60 60)" fill="none" stroke="#61DBFB" strokeWidth="1" />
-    
-    <ellipse rx="45" ry="11" transform="rotate(60 60 60)" fill="none" stroke="#61DBFB" strokeWidth="1" />
-    
-    <ellipse rx="45" ry="11" transform="rotate(120 60 60)" fill="none" stroke="#61DBFB" strokeWidth="1" />
-    
-    <circle cx="60" cy="60" r="6" fill="#61DBFB" />
-</svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 120 120"
+      width="120"
+      height="120"
+    >
+      <ellipse
+        rx="45"
+        ry="11"
+        transform="rotate(0 60 60)"
+        fill="none"
+        stroke="#61DBFB"
+        strokeWidth="1"
+      />
+
+      <ellipse
+        rx="45"
+        ry="11"
+        transform="rotate(60 60 60)"
+        fill="none"
+        stroke="#61DBFB"
+        strokeWidth="1"
+      />
+
+      <ellipse
+        rx="45"
+        ry="11"
+        transform="rotate(120 60 60)"
+        fill="none"
+        stroke="#61DBFB"
+        strokeWidth="1"
+      />
+
+      <circle cx="60" cy="60" r="6" fill="#61DBFB" />
+    </svg>
   );
 }
 
@@ -125,4 +150,3 @@ export function AWSIcon({ className }: { className?: string }) {
     </svg>
   );
 }
-

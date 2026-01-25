@@ -21,7 +21,7 @@ export default function TimelineItem({ item, index }: TimelineItemProps) {
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true);
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     observer.observe(node);
@@ -35,13 +35,13 @@ export default function TimelineItem({ item, index }: TimelineItemProps) {
   const slideClass = visible
     ? "translate-x-0 opacity-100"
     : index % 2 === 0
-    ? "-translate-x-4 opacity-0"
-    : "translate-x-4 opacity-0";
+      ? "-translate-x-4 opacity-0"
+      : "translate-x-4 opacity-0";
 
   return (
     <div
-        ref={ref}
-        className={`
+      ref={ref}
+      className={`
             relative px-4 pl-6 pb-8
             md:px-6 md:pl-8 md:pb-12
             transition-all duration-700 ease-out
@@ -52,7 +52,6 @@ export default function TimelineItem({ item, index }: TimelineItemProps) {
             md:hover:-translate-y-[2px]
         `}
     >
-
       {/* Timeline dot */}
       <span
         className="

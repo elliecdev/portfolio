@@ -1,8 +1,8 @@
 export interface Project {
-  title: string
-  description: string
-  tech: string[]
-  link?: string
+  title: string;
+  description: string;
+  tech: string[];
+  link?: string;
 }
 
 export const projects: Project[] = [
@@ -17,7 +17,7 @@ export const projects: Project[] = [
     title: "Step Challenges",
     description:
       "Step Challenge app to organize participants, teams and track progress through leaderboards.",
-    tech: ["Python", "Django", "Bulma","PostgreSQL"],
+    tech: ["Python", "Django", "Bulma", "PostgreSQL"],
   },
   {
     title: "Book Club",
@@ -25,4 +25,4 @@ export const projects: Project[] = [
       "Personal Book Club app to track, organize and schedule weekly reading plans per book.",
     tech: ["Next.js", "Python", "Django", "PostgreSQL"],
   },
-]
+];

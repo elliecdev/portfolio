@@ -14,23 +14,22 @@ export default function Card({ project, index }: CardProps) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-        const current = ref.current; // store the current ref
-        if (!current) return;
+    const current = ref.current; // store the current ref
+    if (!current) return;
 
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-            if (entry.isIntersecting) setVisible(true);
-            },
-            { threshold: 0.2 }
-        );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.2 },
+    );
 
-        observer.observe(current);
+    observer.observe(current);
 
-        return () => {
-            observer.unobserve(current);
-        };
-    }, []);
-
+    return () => {
+      observer.unobserve(current);
+    };
+  }, []);
 
   const cardAnimation = visible
     ? `translate-y-0 opacity-100 transition-all duration-700 delay-[${index * 100}ms] ease-out`
@@ -42,8 +41,8 @@ export default function Card({ project, index }: CardProps) {
 
   return (
     <div
-        ref={ref}
-        className={`
+      ref={ref}
+      className={`
             bg-white dark:bg-gray-900
             border border-gray-200 dark:border-gray-700
             rounded-xl p-6

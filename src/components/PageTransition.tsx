@@ -12,11 +12,7 @@ export default function PageTransition({
   return (
     <div
       key={pathname}
-      className="
-        animate-page-in
-        motion-safe:transition-all
-        motion-safe:duration-300
-      "
+      className="animate-page-in motion-safe:transition-all motion-safe:duration-300"
     >
       {children}
     </div>

@@ -25,7 +25,6 @@ export default function Header() {
     setMounted(true); // safe, runs only on client
   }, []);
 
-
   useEffect(() => {
     // defer setState to next tick to avoid synchronous update warning
     const id = requestAnimationFrame(() => setMounted(true));
@@ -107,9 +106,11 @@ export default function Header() {
                         after:origin-center after:scale-x-0
                         after:bg-accent
                         after:transition-transform after:duration-300
-                        ${isActive
-                          ? "after:h-[3px] after:scale-x-100"
-                          : "after:h-[2px] hover:after:scale-x-100"}
+                        ${
+                          isActive
+                            ? "after:h-[3px] after:scale-x-100"
+                            : "after:h-[2px] hover:after:scale-x-100"
+                        }
                         hover:[text-shadow:0_0_8px_rgba(122,115,209,0.25)]
                       `}
                     >
@@ -122,26 +123,26 @@ export default function Header() {
 
             {/* Dark mode toggle */}
             {mounted && (
-            <button
+              <button
                 onClick={toggle}
                 aria-label="Toggle dark mode"
                 className="text-xl transition-transform hover:scale-110"
-            >
+              >
                 {isDark ? "🌙" : "☀️"}
-            </button>
+              </button>
             )}
           </div>
 
           {/* Mobile menu button */}
           <div className="flex items-center gap-4 md:hidden">
-            {mounted && (  // only render after mount
-                <button
+            {mounted && ( // only render after mount
+              <button
                 onClick={toggle}
                 aria-label="Toggle dark mode"
                 className="text-xl transition-transform hover:scale-110"
-                >
+              >
                 {isDark ? "🌙" : "☀️"}
-                </button>
+              </button>
             )}
 
             <button

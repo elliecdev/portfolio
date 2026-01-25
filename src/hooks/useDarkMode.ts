@@ -7,7 +7,9 @@ export function useDarkMode() {
   const [isDark, setIsDark] = useState(() => {
     if (typeof window === "undefined") return false; // SSR safe
     const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     return stored === "dark" || (!stored && prefersDark);
   });
 
