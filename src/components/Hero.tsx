@@ -7,7 +7,8 @@ export default function Hero() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(true);
+    const raf = requestAnimationFrame(() => setVisible(true));
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
@@ -20,8 +21,6 @@ export default function Hero() {
 
         <p className="text-lg text-white/90 md:text-xl">
           Technical Expertise, Leadership, Mentorship & Delivery
-          {/* Building scalable, cloud-native platforms with strong teams,
-          pragmatic architecture, and modern engineering practices. */}
         </p>
       </div>
 
