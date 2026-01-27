@@ -81,7 +81,7 @@ export default function Header() {
               ${scrolled ? "text-base" : "text-lg"}
             `}
           >
-            Ellie.dev
+            Ellie Coelho
           </Link>
 
           {/* Desktop Navigation + Dark/Light toggle */}

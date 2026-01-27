@@ -35,7 +35,7 @@ export default function Footer() {
       <div className="max-w-5xl px-6 py-10 mx-auto text-sm leading-relaxed tracking-wide text-center text-gray-600 transition-colors ease-in-out dark:text-gray-400 duration-400">
         © {new Date().getFullYear()}{" "}
         <span className="font-medium transition-colors ease-in-out text-accent dark:text-accent/80 duration-400">
-          Ellie.dev
+          Ellie Coelho
         </span>{" "}
         — Built with Next.js & Tailwind
       </div>
