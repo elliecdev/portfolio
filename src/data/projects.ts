@@ -10,8 +10,8 @@ export const projects: Project[] = [
     title: "Portfolio Website",
     description:
       "A personal portfolio to showcase projects and professional experience, built with Next.js, TypeScript, and Tailwind CSS.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vite", "Vercel"],
-    link: "https://ellie.dev",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+    link: "https://elliecoelho.vercel.app",
   },
   {
     title: "Step Challenges",
