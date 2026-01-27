@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from "react";
 interface BadgeProps {
   label: string;
   index: number;
+  className?: string;
 }
 
-export default function Badge({ label, index }: BadgeProps) {
+export default function Badge({ label, index, className = "" }: BadgeProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -42,6 +43,7 @@ export default function Badge({ label, index }: BadgeProps) {
         text-gray-800 dark:text-gray-200
         text-xs font-medium px-2 py-1 rounded
         ${animationClass}
+        ${className}
       `}
     >
       {label}

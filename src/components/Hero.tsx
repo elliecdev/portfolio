@@ -20,7 +20,8 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg text-white/90 md:text-xl">
-          Technical Expertise, Leadership, Mentorship & Delivery
+          Building scalable systems through technical excellence, leadership,
+          and delivery
         </p>
       </div>
 
