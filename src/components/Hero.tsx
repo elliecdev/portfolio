@@ -37,7 +37,7 @@ export default function Hero() {
       <TechIcon
         src="/assets/python.svg"
         alt="Python"
-        className="w-8 top-20 right-32 md:w-10"
+        className="w-8 top-20 right-32 md:w-8"
         delay="delay-200"
         visible={visible}
       />
@@ -45,7 +45,7 @@ export default function Hero() {
       <TechIcon
         src="/assets/php.svg"
         alt="PHP"
-        className="w-10 top-36 right-14 md:w-12"
+        className="w-10 top-36 right-14 md:w-10"
         delay="delay-300"
         visible={visible}
       />
@@ -61,8 +61,16 @@ export default function Hero() {
       <TechIcon
         src="/assets/postgres.svg"
         alt="PostgreSQL"
-        className="top-20 right-10 w-9 md:w-11"
+        className="top-20 right-10 w-9 md:w-9"
         delay="delay-700"
+        visible={visible}
+      />
+
+      <TechIcon
+        src="/assets/typescript.svg"
+        alt="TypeScript"
+        className="w-7 top-6 right-40 md:w-7"
+        delay="delay-900"
         visible={visible}
       />
     </section>
