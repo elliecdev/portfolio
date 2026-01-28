@@ -30,7 +30,6 @@ A modern, interactive portfolio website built with **Next.js 16**, **React 19**,
 ### Installation
 
 ```bash
-cd /Users/ellie/code/portfolio
 npm install --legacy-peer-deps
 ```
 
