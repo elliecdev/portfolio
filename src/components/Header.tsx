@@ -76,9 +76,9 @@ export default function Header() {
             href="/"
             onClick={() => setOpen(false)}
             className={`
-              font-semibold tracking-tight text-accent dark:text-accent/80
-              transition-all duration-300
-              ${scrolled ? "text-base" : "text-lg"}
+              font-bold tracking-tight md:tracking-normal text-accent dark:text-accent/80
+              transition-all duration-300 hover:opacity-90
+              ${scrolled ? "text-lg" : "text-xl"}
             `}
           >
             Ellie Coelho
