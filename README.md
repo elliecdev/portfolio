@@ -1,36 +1,140 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio
+
+A modern, interactive portfolio website built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS**. Features dark mode, smooth animations, and a fully tested component suite.
+
+## Features
+
+- ⚡ **Fast & Responsive** — Next.js 16 with SSR and optimized images
+- 🌙 **Dark Mode** — Toggle between light and dark themes (localStorage persisted)
+- ✨ **Smooth Animations** — Intersection Observer for scroll-triggered reveals, RAF-driven effects
+- 🧪 **Fully Tested** — 100% component coverage with Vitest, React Testing Library, behavior/interaction tests
+- ♿ **Accessible** — semantic HTML, ARIA labels, keyboard navigation
+- 📱 **Mobile-First** — responsive design with Tailwind CSS
+
+## Tech Stack
+
+- **Framework:** Next.js 16, React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Testing:** Vitest, React Testing Library, @testing-library/dom
+- **CI/CD:** GitHub Actions
+- **Coverage:** c8 + @vitest/coverage-v8
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ (or 20+)
+- npm
+
+### Installation
+
+```bash
+cd /Users/ellie/code/portfolio
+npm install --legacy-peer-deps
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Open http://localhost:3000 in your browser
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build & Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Testing
 
-## Learn More
+```bash
+# Run all tests
+npm test
 
-To learn more about Next.js, take a look at the following resources:
+# Watch mode
+npm run test:watch
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Coverage report
+npm run coverage
+# or CI mode
+npm run coverage:ci
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All components have behavior/interaction tests (dark mode toggle, mobile menu, animations, etc.). See `.github/workflows/ci.yml` for automated test runs on push/PR.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/                 # Next.js App Router (13+)
+│   ├── layout.tsx       # Root layout
+│   ├── page.tsx         # Home page
+│   └── ...              # Other routes
+├── components/          # Reusable React components (tested)
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── Card.tsx
+│   ├── Timeline.tsx
+│   ├── Technologies.tsx
+│   └── ...
+├── data/                # Static data (projects, experience, tech, etc.)
+│   ├── projects.ts
+│   ├── experience.ts
+│   └── ...
+├── hooks/               # Custom React hooks
+│   ├── useDarkMode.ts
+│   └── ...
+├── test/
+│   ├── setupTests.ts    # Vitest config & mocks
+│   └── renderWithProviders.tsx  # Test utility with router/theme
+└── public/              # Static assets
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Key Features Explained
+
+### Dark Mode
+
+- Toggle in Header component
+- Theme state stored in `localStorage`
+- Applied via `document.documentElement.classList`
+
+### Animations
+
+- **Scroll reveals:** IntersectionObserver detects viewport entry, applies animation classes
+- **Icon animations:** RequestAnimationFrame (RAF) for smooth, GPU-accelerated effects
+- **Page transitions:** Fade in/out on route changes
+
+### Testing Strategy
+
+- **Smoke tests:** component renders without crash
+- **Behavior tests:** user interactions (toggle, menu, visibility on scroll)
+- **Custom util:** `renderWithProviders` sets up router & theme context for isolated tests
+
+## GitHub Actions CI
+
+Push to main/PR triggers:
+
+1. Checkout code
+2. Setup Node.js
+3. Install dependencies
+4. Run tests with coverage
+5. Upload coverage artifact
+
+See `.github/workflows/ci.yml` for details.
+
+## Deployment
+
+Deploy to **Vercel**:
+
+```bash
+npm install -g vercel
+vercel
+# follow prompts
+```
+
+---
+
+Built with ❤️ using Next.js, React, and TypeScript.
