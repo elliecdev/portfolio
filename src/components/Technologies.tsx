@@ -16,6 +16,7 @@ const technologies = [
   "CI/CD",
   "Microservices",
   "Agile",
+  "Git",
   "GitHub Actions",
   "SonarQube",
   "New Relic",
