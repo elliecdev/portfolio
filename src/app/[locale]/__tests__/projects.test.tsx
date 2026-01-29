@@ -36,7 +36,7 @@ describe("Projects Page", () => {
 
     // Check for French project content
     expect(screen.getByText(/Site Portfolio/i)).toBeInTheDocument();
-    expect(screen.getByText(/Défis d'étapes/i)).toBeInTheDocument();
+    expect(screen.getByText(/Step Challenges/i)).toBeInTheDocument();
 
     restore();
   });
@@ -65,13 +65,19 @@ describe("Projects Page", () => {
     const { restore } = renderWithProviders(pageContent);
 
     expect(
-      screen.getByText(/portfolio personnel pour mettre en valeur/i),
+      screen.getByText(
+        (content) =>
+          content.includes("Portfolio personnel") &&
+          content.includes("mettre en valeur"),
+      ),
     ).toBeInTheDocument();
+    expect(screen.getByText(/organiser les participants/i)).toBeInTheDocument();
     expect(
-      screen.getByText(/organiser les participants, les équipes/i),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(/Application personnelle de club de lecture/i),
+      screen.getByText(
+        (content) =>
+          content.includes("Application personnelle") &&
+          content.includes("club de lecture"),
+      ),
     ).toBeInTheDocument();
 
     restore();

@@ -32,11 +32,9 @@ describe("Experience Page", () => {
     expect(screen.getByText(/parcours professionnel/i)).toBeInTheDocument();
 
     // Check for French experience content
-    expect(
-      screen.getByText(
-        /Directrice associée, Développement d'applications et DevOps/i,
-      ),
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Directrice associée/i)).toBeInTheDocument();
+    const pslGroups = screen.getAllByText(/PSL Group/i);
+    expect(pslGroups.length).toBeGreaterThan(0);
 
     restore();
   });

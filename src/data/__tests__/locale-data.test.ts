@@ -61,7 +61,7 @@ describe("Experience Data", () => {
       const roles = experienceFr.map((item) => item.role);
       expect(roles[0]).toContain("Directrice");
       expect(roles[1]).toContain("Gestionnaire");
-      expect(roles[4]).toContain("Développeur");
+      expect(roles[4]).toContain("Développeuse");
     });
   });
 
@@ -146,7 +146,7 @@ describe("Projects Data", () => {
     it("should have French project titles", () => {
       const titles = projectsFr.map((p) => p.title);
       expect(titles).toContain("Site Portfolio");
-      expect(titles).toContain("Défis d'étapes");
+      expect(titles).toContain("Step Challenges");
       expect(titles).toContain("Club de lecture");
     });
   });

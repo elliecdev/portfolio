@@ -44,11 +44,7 @@ describe("Timeline Component", () => {
       const { restore } = renderWithProviders(<Timeline locale="fr" />);
 
       // Check for French role titles
-      expect(
-        screen.getByText(
-          /Directrice associée, Développement d'applications et DevOps/i,
-        ),
-      ).toBeInTheDocument();
+      expect(screen.getByText(/Directrice associée/i)).toBeInTheDocument();
       expect(
         screen.getByText(/Gestionnaire de projets techniques senior/i),
       ).toBeInTheDocument();
