@@ -73,7 +73,7 @@ export const experienceFr: ExperienceItem[] = [
   },
   {
     role: "Support des applications / DevOps",
-    company: "PSL Group | Montreal, QC (Télétravail)",
+    company: "PSL Group | Montreal, QC",
     period: "Mai 2014 – Juin 2015",
     description: [
       "Géré les environnements de staging et production afin d'assurer une haute disponibilité et sécurité.",
@@ -82,8 +82,8 @@ export const experienceFr: ExperienceItem[] = [
     tech: ["LAMP", "MySQL", "Linux", "DevOps", "Monitoring", "Automation"],
   },
   {
-    role: "Développeur d'applications senior",
-    company: "PSL Group | Montreal, QC (Télétravail)",
+    role: "Développeuse d'applications senior",
+    company: "PSL Group | Montreal, QC",
     period: "Mars 2013 – Mai 2014",
     description: [
       "Dirigé le développement full-stack de nouvelles applications web en PHP/Yii, améliorant la rapidité des rapports de 60 %.",

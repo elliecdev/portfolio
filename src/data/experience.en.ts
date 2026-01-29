@@ -73,7 +73,7 @@ export const experienceEn: ExperienceItem[] = [
   },
   {
     role: "Application Support / DevOps",
-    company: "PSL Group | Montreal, QC (Remote)",
+    company: "PSL Group | Montreal, QC",
     period: "May 2014 – Jun 2015",
     description: [
       "Managed staging and production environments to ensure high availability and security.",
@@ -83,7 +83,7 @@ export const experienceEn: ExperienceItem[] = [
   },
   {
     role: "Senior Application Developer",
-    company: "PSL Group | Montreal, QC (Remote)",
+    company: "PSL Group | Montreal, QC",
     period: "Mar 2013 – May 2014",
     description: [
       "Led full-stack development of new PHP/Yii web applications, improving reporting speed by 60%.",
