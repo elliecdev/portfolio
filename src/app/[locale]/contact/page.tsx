@@ -3,8 +3,15 @@
 import { useEffect, useRef, useState } from "react";
 import ContactButton from "@/components/ContactButton";
 import { EnvelopeIcon, GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { dictionaries } from "@/i18n";
+import { Locale } from "@/i18n/config";
+import { usePathname } from "next/navigation";
 
 export default function ContactPage() {
+  const pathname = usePathname();
+  const locale = (pathname.split("/")[1] || "en") as Locale;
+  const dict = dictionaries[locale];
+
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -31,21 +38,15 @@ export default function ContactPage() {
     : "translate-y-6 opacity-0";
 
   const buttons = [
-    // {
-    //   label: "Email Me",
-    //   href: "mailto:test@example.com",
-    //   style: "bg-accent text-white hover:bg-accent/90",
-    //   icon: <EnvelopeIcon />,
-    // },
     {
-      label: "GitHub",
+      label: dict.contact.github,
       href: "https://github.com/elliecdev",
       style:
         "bg-accent text-white hover:bg-accent/90 dark:bg-accent dark:text-gray-200 dark:hover:bg-accent/80",
       icon: <GitHubIcon />,
     },
     {
-      label: "LinkedIn",
+      label: dict.contact.linkedin,
       href: "https://linkedin.com/in/elliecoelho",
       style:
         "bg-accent text-white hover:bg-accent/90 dark:bg-accent dark:text-gray-200 dark:hover:bg-accent/80",
@@ -59,12 +60,11 @@ export default function ContactPage() {
       className={`mx-auto max-w-3xl px-6 py-16 text-center ${sectionAnimation}`}
     >
       <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
-        Get in Touch
+        {dict.contact.title}
       </h1>
 
       <p className="mt-4 leading-relaxed text-gray-700 dark:text-gray-300">
-        I’m always open to new opportunities, collaborations, or just a friendly
-        chat.
+        {dict.contact.text}
       </p>
 
       <div className="flex flex-col justify-center gap-4 mt-8 sm:flex-row">

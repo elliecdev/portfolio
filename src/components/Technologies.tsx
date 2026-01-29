@@ -12,9 +12,13 @@ const technologies = [
   "PostgreSQL",
   "MySQL",
   "AWS",
+  "REST",
   "CI/CD",
   "Microservices",
   "Agile",
+  "GitHub Actions",
+  "SonarQube",
+  "New Relic",
 ];
 
 export default function Technologies() {
