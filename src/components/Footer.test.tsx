@@ -6,7 +6,7 @@ import { describe, it, expect } from "vitest";
 
 describe("Footer", () => {
   it("renders copyright and name", () => {
-    const { restore } = renderWithProviders(<Footer />);
+    const { restore } = renderWithProviders(<Footer locale="en" />);
     const year = new Date().getFullYear().toString();
     // the year may be split among nodes; use a flexible matcher
     expect(

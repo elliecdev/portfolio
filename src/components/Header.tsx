@@ -4,20 +4,28 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "@/hooks/useDarkMode";
+import { dictionaries } from "@/i18n";
+import { Locale } from "@/i18n/config";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const navItems = [
-  { label: "About", href: "/" },
-  { label: "Experience", href: "/experience" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" },
-];
+interface HeaderProps {
+  locale: Locale;
+}
 
-export default function Header() {
+export default function Header({ locale }: HeaderProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const { isDark, toggle } = useDarkMode();
+  const dict = dictionaries[locale];
+
+  const navItems = [
+    { label: dict.nav.about, href: `/${locale}` },
+    { label: dict.nav.experience, href: `/${locale}/experience` },
+    { label: dict.nav.projects, href: `/${locale}/projects` },
+    { label: dict.nav.contact, href: `/${locale}/contact` },
+  ];
 
   const [mounted, setMounted] = useState(false);
 
@@ -73,7 +81,7 @@ export default function Header() {
         <nav className="flex items-center justify-between max-w-5xl px-6 mx-auto">
           {/* Logo */}
           <Link
-            href="/"
+            href={`/${locale}`}
             onClick={() => setOpen(false)}
             className={`
               font-bold tracking-tight md:tracking-normal text-accent dark:text-accent/80
@@ -120,6 +128,8 @@ export default function Header() {
                 );
               })}
             </ul>
+
+            <LanguageToggle />
 
             {/* Dark mode toggle */}
             {mounted && (
@@ -203,8 +213,34 @@ export default function Header() {
               );
             })}
           </ul>
+
+          {/* Language Toggle for Mobile */}
+          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+              Language
+            </div>
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </>
+  );
+}
+
+export function LanguageToggle() {
+  const pathname = usePathname();
+
+  const isFrench = pathname.startsWith("/fr");
+  const targetLocale = isFrench ? "en" : "fr";
+
+  const newPath = pathname.replace(/^\/(en|fr)/, `/${targetLocale}`);
+
+  return (
+    <Link
+      href={newPath}
+      className="text-sm transition opacity-70 hover:opacity-100"
+    >
+      {isFrench ? "EN" : "FR"}
+    </Link>
   );
 }

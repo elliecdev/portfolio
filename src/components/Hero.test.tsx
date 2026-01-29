@@ -6,7 +6,12 @@ import { describe, it, expect } from "vitest";
 
 describe("Hero", () => {
   it("renders heading and tech icons and icons become visible", async () => {
-    const { container, restore } = renderWithProviders(<Hero />);
+    const { container, restore } = renderWithProviders(
+      <Hero
+        title="Software Engineering Leader"
+        subtitle="Building scalable systems through technical excellence"
+      />,
+    );
 
     expect(
       screen.getByText(/Software Engineering Leader/i),

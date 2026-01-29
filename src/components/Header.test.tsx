@@ -7,7 +7,7 @@ import { describe, it, expect } from "vitest";
 
 describe("Header", () => {
   it("renders site title and navigation items", async () => {
-    const { restore } = renderWithProviders(<Header />);
+    const { restore } = renderWithProviders(<Header locale="en" />);
 
     // Title
     expect(screen.getByText(/Ellie Coelho/i)).toBeInTheDocument();
@@ -25,7 +25,7 @@ describe("Header", () => {
 
   it("toggles dark mode and opens/closes the mobile menu", async () => {
     const user = userEvent.setup();
-    const { restore } = renderWithProviders(<Header />);
+    const { restore } = renderWithProviders(<Header locale="en" />);
 
     // initial document class should not contain dark
     expect(document.documentElement.classList.contains("dark")).toBe(false);

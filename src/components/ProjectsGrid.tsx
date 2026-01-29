@@ -1,7 +1,15 @@
-import { projects } from "@/data/projects";
+import { projectsEn } from "@/data/projects.en";
+import { projectsFr } from "@/data/projects.fr";
 import Card from "./Card";
+import { Locale } from "@/i18n/config";
 
-export default function ProjectsGrid() {
+interface ProjectsGridProps {
+  locale: Locale;
+}
+
+export default function ProjectsGrid({ locale }: ProjectsGridProps) {
+  const projects = locale === "fr" ? projectsFr : projectsEn;
+
   return (
     <div className="grid gap-6 md:grid-cols-2">
       {projects.map((project, index) => (

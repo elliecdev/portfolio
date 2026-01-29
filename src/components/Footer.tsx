@@ -2,10 +2,17 @@
 
 import { useEffect, useRef, useState } from "react";
 import { GitHubIcon, LinkedInIcon } from "@/components/icons";
+import { dictionaries } from "@/i18n";
+import { Locale } from "@/i18n/config";
 
-export default function Footer() {
+interface FooterProps {
+  locale: Locale;
+}
+
+export default function Footer({ locale }: FooterProps) {
   const footerRef = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const dict = dictionaries[locale];
 
   useEffect(() => {
     if (!footerRef.current) return;
@@ -40,7 +47,7 @@ export default function Footer() {
         <span className="font-medium text-accent dark:text-accent/80">
           Ellie Coelho
         </span>{" "}
-        — Built with Next.js & Tailwind
+        — {dict.footer.builtWith}
         {/* Social icons */}
         <div
           className={`

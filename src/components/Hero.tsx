@@ -3,7 +3,13 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function Hero() {
+export default function Hero({
+  title,
+  subtitle,
+}: {
+  title: string;
+  subtitle: string;
+}) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -16,13 +22,10 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-3xl space-y-4">
         <h1 className="text-xl font-semibold leading-tight md:text-4xl">
-          Software Engineering Leader
+          {title}
         </h1>
 
-        <p className="text-lg text-white/90 md:text-xl">
-          Building scalable systems through technical excellence, leadership,
-          and delivery
-        </p>
+        <p className="text-lg text-white/90 md:text-xl">{subtitle}</p>
       </div>
 
       {/* Floating tech icons */}
