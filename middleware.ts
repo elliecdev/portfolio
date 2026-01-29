@@ -1,12 +1,12 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { locales, defaultLocale } from '@/i18n/config';
+import { NextRequest, NextResponse } from "next/server";
+import { locales, defaultLocale } from "@/i18n/config";
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // Check if pathname starts with a locale
-  const pathnameHasLocale = locales.some((locale) =>
-    pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+  const pathnameHasLocale = locales.some(
+    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
   // If locale is present, continue
@@ -15,13 +15,13 @@ export function middleware(request: NextRequest) {
   }
 
   // If pathname is just '/', redirect to /en
-  if (pathname === '/') {
+  if (pathname === "/") {
     return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url));
   }
 
   // For any other path without locale (e.g., /about), prepend locale
   return NextResponse.redirect(
-    new URL(`/${defaultLocale}${pathname}`, request.url)
+    new URL(`/${defaultLocale}${pathname}`, request.url),
   );
 }
 
@@ -33,8 +33,8 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
-     * - public folder
+     * - assets (public assets)
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|public).*)',
+    "/((?!api|_next/static|_next/image|favicon.ico|assets).*)",
   ],
 };
