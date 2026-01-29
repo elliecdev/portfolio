@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDarkMode } from "@/hooks/useDarkMode";
 import { dictionaries } from "@/i18n";
 import { Locale } from "@/i18n/config";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface HeaderProps {
   locale: Locale;
@@ -212,6 +213,14 @@ export default function Header({ locale }: HeaderProps) {
               );
             })}
           </ul>
+
+          {/* Language Toggle for Mobile */}
+          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
+              Language
+            </div>
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </>
