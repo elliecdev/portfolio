@@ -2,6 +2,7 @@ import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import { Analytics } from "@vercel/analytics/react";
 import { locales } from "@/i18n/config";
 import { Locale } from "@/i18n/config";
 
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer locale={typedLocale} />
+        <Analytics />
       </body>
     </html>
   );
